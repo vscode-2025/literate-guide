@@ -1,0 +1,9 @@
+### General Questions
+
+### Create branch folder:
+# Clone Repo to Computer
+git clone <repo-rul> 
+cd <repo-folder>
+git checkout -b <new-branch-name>
+git add . # . stages all modified files in the folder, . can be replcaed by specified file name if you want to specify one
+git push origin <new-branch-name>
