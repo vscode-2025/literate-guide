@@ -596,8 +596,9 @@ def main():
         )
 
     # ----------------------------
-    # Event vs Normal comparison
+    # Event vs Normal Day Comparison
     # ----------------------------
+    st.divider()
     if "label" in linked.columns:
         st.subheader("Event vs Normal Day Comparison")
         daily = linked.copy()
@@ -681,6 +682,13 @@ def main():
             data=avg_display.rename(columns={"nearest_stop_name": "stop_name"}).round(4).to_csv(index=False).encode("utf-8"),
             file_name="event_vs_normal.csv",
             key="dl_event_vs_normal_csv",
+        )
+    else:
+        st.subheader("Event vs Normal Day Comparison")
+        st.info(
+            "Event vs Normal Day comparison is not available because no events data was loaded. "
+            "To enable this feature, ensure the events JSON file (e.g. Festivals and events json feed.json) "
+            "is available and contains valid event dates."
         )
 
 
